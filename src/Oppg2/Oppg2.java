@@ -13,7 +13,7 @@ public class Oppg2 {
                 new Employee("Mary", "Johnson", Gender.FEMALE, "Banker", 500000),
                 new Employee("Linda", "Williams", Gender.FEMALE, "Loan Processor", 550000),
                 new Employee("Reginald", "Brown", Gender.MALE, "Credit Analyst", 600000),
-                new Employee("Robert", "Jones", Gender.MALE, "Investment Banker", 750000)
+                new Employee("Emma", "Jones", Gender.FEMALE, "Investment Banker", 750000)
         );
 
         Function<Employee, Integer> kroneAddition = (emp) -> emp.getSalary() + 10000;
