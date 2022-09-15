@@ -1,5 +1,7 @@
 package Oppg2;
 
+import com.sun.source.tree.ClassTree;
+
 public class Employee {
     private String firstname;
     private String surname;
@@ -31,6 +33,14 @@ public class Employee {
         this.surname = surname;
     }
 
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
     public String getRole() {
         return role;
     }
@@ -45,5 +55,11 @@ public class Employee {
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Ansatt" + "\nFirstname: " + firstname + "\nLastname: " + surname + "\nGender: " + gender
+                + "\nRole: " + role + "\nSalary: " + salary;
     }
 }
