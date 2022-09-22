@@ -19,7 +19,7 @@ public class Oppg2 {
         Function<Employee, Integer> kroneAddition = (emp) -> emp.getSalary() + 10000;
         Function<Employee, Integer> percentAddition = (emp) -> (emp.getSalary() * 10) / 100 + emp.getSalary();
         Function<Employee, Integer> kroneAdditionLowSalary = (emp) -> (emp.getSalary() < 1000000) ? kroneAddition.apply(emp) : 0;
-        Function<Employee, Integer> percentAdditionMale = (emp) -> emp.getGender().equals(Gender.MALE) ? percentAddition.apply(emp) : 0;
+        Function<Employee, Integer> percentAdditionMale = (emp) -> emp.getGender().equals(Gender.MALE) ? percentAddition.apply(emp) : emp.getSalary();
 
         printAll(employees);
 
