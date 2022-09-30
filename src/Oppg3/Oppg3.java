@@ -23,16 +23,24 @@ public class Oppg3 {
                 .map(emp -> emp.getSurname())
                 .collect(Collectors.toList());
 
+        /*for(String name : surnames) {
+            System.out.println("Surname: " + name);
+        }*/
+
         // b
         long numOfFemales = employees.stream()
                 .filter(emp -> emp.getGender() == Gender.FEMALE)
                 .count();
+
+        //System.out.println("Number of females: " + numOfFemales);
 
         // c
         OptionalDouble avgFemaleSalary = employees.stream()
                 .filter(emp -> emp.getGender() == Gender.FEMALE)
                 .mapToDouble(emp -> emp.getSalary())
                 .average();
+
+        //System.out.println("Average female salary: " + avgFemaleSalary.getAsDouble());
 
         // d
         List<Employee> chiefs = employees.stream()
@@ -41,24 +49,29 @@ public class Oppg3 {
 
         chiefs.forEach(emp -> emp.setSalary(((emp.getSalary()*7)/100 + emp.getSalary())));
 
-        for(Employee emp : employees) {
+        /*for(Employee emp : chiefs) {
             System.out.println(
                     "Full name: " + emp.getFirstname() + " " + emp.getSurname()
+                    + "\nRole: " + emp.getRole()
                     + "\nSalary: " + emp.getSalary() + "\n"
             );
-        }
+        }*/
 
         // e
         boolean highSalary = employees.stream()
                 .anyMatch(emp -> emp.getSalary() > 800000);
 
+        //System.out.println("Is there anyone that earn more than 800 000? " + highSalary);
+
         // f
-        employees.forEach(System.out::println); // ER DITTA INNAFOR???
+        //employees.forEach(System.out::println); // ER DITTA INNAFOR???
 
         // g
         Employee lowestSalary = employees.stream()
                 .min(Comparator.comparing(Employee::getSalary))
                 .orElseThrow(NoSuchElementException::new);
+
+        //System.out.println("The employee with lowest salary:\n" + lowestSalary);
 
         // h
         int divisibleByThreeOrFive = IntStream.rangeClosed(1, 1000)

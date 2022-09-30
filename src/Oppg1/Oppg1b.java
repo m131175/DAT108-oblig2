@@ -10,8 +10,8 @@ public class Oppg1b {
         BiFunction<Integer, Integer, Integer> absDiff = (a, b) -> Math.abs(a - b);
 
         int sum = calculate(12, 13, add);
-        int largestNum = calculate(24, 39, max);
-        int absoluteDiff = calculate(65, 56, absDiff);
+        int largestNum = calculate(-5, 3, max);
+        int absoluteDiff = calculate(54, 45, absDiff);
 
         System.out.println("Addition: " + sum + "\nHighest number: "
                 + largestNum + "\nAbsolute difference: " + absoluteDiff);
